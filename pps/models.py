@@ -10,5 +10,8 @@ class Task(models.Model):
 
 from django.contrib import admin
 
-admin.site.register(Task)
+class TaskAdmin(admin.ModelAdmin):
+	list_display = ('title','created')
+
+admin.site.register(Task,TaskAdmin)
 
